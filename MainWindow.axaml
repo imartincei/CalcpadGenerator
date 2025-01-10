@@ -5,5 +5,18 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="CalcpadGenerator.MainWindow"
         Title="CalcpadGenerator">
-    Welcome to Avalonia!
+	    <StackPanel Margin="10">
+		    <TextBlock Text="Excel Data:" FontWeight="Bold" Margin="0,0,0,10"/>
+		    <TextBox Name="OutputTextBox"
+                        AcceptsReturn="True"
+                        IsReadOnly="True"
+					    ScrollViewer.VerticalScrollBarVisibility="Auto"
+					    ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                        Height="200"
+                        TextWrapping="Wrap"/>
+			<Button Name="ExcelFileOpener" 
+					Content="Select Excel File"
+                    Width="150"
+                    HorizontalAlignment="Left"/>
+	    </StackPanel>
 </Window>
