@@ -5,18 +5,48 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="CalcpadGenerator.MainWindow"
         Title="CalcpadGenerator">
-	    <StackPanel Margin="10">
-		    <TextBlock Text="Excel Data:" FontWeight="Bold" Margin="0,0,0,10"/>
-		    <TextBox Name="OutputTextBox"
-                        AcceptsReturn="True"
-                        IsReadOnly="True"
-					    ScrollViewer.VerticalScrollBarVisibility="Auto"
-					    ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                        Height="200"
-                        TextWrapping="Wrap"/>
-			<Button Name="ExcelFileOpener" 
-					Content="Select Excel File"
-                    Width="150"
-                    HorizontalAlignment="Left"/>
-	    </StackPanel>
+	<Window.Styles>
+		<Style Selector="Button">
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+		</Style>
+		<Style Selector="TextBlock">
+			<Setter Property="VerticalAlignment" Value="Center"/>
+		</Style>
+		<Style Selector="StackPanel.Horiz">
+			<Setter Property="Orientation" Value="Horizontal"/>
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+			<Setter Property="Margin" Value="0, 0, 0, 10"/>
+			<Setter Property="Spacing" Value="10"/>
+		</Style>
+	</Window.Styles>
+
+	<StackPanel Margin="10">
+		<StackPanel Classes="Horiz">
+			<Button Name="ExcelFileOpener"
+					Content="Select Excel File"/>
+			<TextBlock Text="No file selected" Name="Filepath"/>
+		</StackPanel>
+		<StackPanel Classes="Horiz">
+			<TextBlock Text="Excel Range:" FontWeight="Bold"/>
+			<TextBox Name="ExcelRange"
+					Width="200"
+					Watermark="Insert Excel Range"
+					HorizontalAlignment="Left"/>
+		</StackPanel>
+		
+		
+		<TextBox Name="DropdownName" 
+					Width="200"
+					Watermark="Insert Dropdown Name"
+					HorizontalAlignment="Left"/>
+		<TextBlock Text="Output Code:" FontWeight="Bold"/>
+		<TextBox Name="OutputTextBox"
+                    AcceptsReturn="True"
+                    IsReadOnly="True"
+					ScrollViewer.VerticalScrollBarVisibility="Auto"
+					ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                    Height="200"
+                    TextWrapping="Wrap"/>
+	</StackPanel>
 </Window>

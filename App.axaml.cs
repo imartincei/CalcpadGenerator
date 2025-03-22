@@ -1,6 +1,10 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using MsBox.Avalonia.Enums;
+using MsBox.Avalonia;
+using System;
+using Avalonia.Threading;
 
 namespace CalcpadGenerator
 {
